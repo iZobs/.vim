@@ -235,6 +235,7 @@ modf
 perror
 pow
 printf
+printk
 putc
 putchar
 puts
@@ -283,6 +284,8 @@ strtol
 strtoul
 strxfrm
 system
+string
+stdlib
 tan
 tanh
 time

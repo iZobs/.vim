@@ -122,19 +122,19 @@ func SetTitle()
 	else 
 		call setline(1, "/*************************************************************************") 
 		call append(line("."), "	> File Name: ".expand("%")) 
-		call append(line(".")+1, "	> Author: ma6174") 
-		call append(line(".")+2, "	> Mail: ma6174@163.com ") 
+		call append(line(".")+1, "	> Author: izobs") 
+		call append(line(".")+2, "	> Mail: ivincentlin@gmail.com ") 
 		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
 		call append(line(".")+4, " ************************************************************************/") 
 		call append(line(".")+5, "")
 	endif
 	if &filetype == 'cpp'
-		call append(line(".")+6, "#include<iostream>")
+		call append(line(".")+6, "#include <iostream>")
 		call append(line(".")+7, "using namespace std;")
 		call append(line(".")+8, "")
 	endif
 	if &filetype == 'c'
-		call append(line(".")+6, "#include<stdio.h>")
+		call append(line(".")+6, "#include <stdio.h>")
 		call append(line(".")+7, "")
 	endif
 "	if &filetype == 'java'
@@ -162,6 +162,7 @@ imap <C-j> <ESC>
 imap <C-v> <Esc>"*pa
 imap <C-a> <Esc>^
 imap <C-e> <Esc>$
+imap jk <Esc>
 vmap <C-c> "+y
 set mouse=v
 "set clipboard=unnamed
@@ -239,8 +240,12 @@ func FormartSrc()
 endfunc
 "结束定义FormartSrc
 
+"""调转；：
+nnoremap ; :
+nnoremap : ;
 
-
+"""粘贴时不置换“剪贴板”
+xnoremap p pgvy
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
